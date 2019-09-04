@@ -3,6 +3,7 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import login from './components/login'
 
 Vue.config.productionTip = false
 
@@ -12,4 +13,14 @@ new Vue({
   router,
   components: { App },
   template: '<App/>'
+})
+
+new Vue({
+  el: '#app-one',
+  data: { },
+  methods: { },
+  components: {
+    login
+  },
+  template: '<login/>'
 })
