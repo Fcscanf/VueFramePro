@@ -17,10 +17,12 @@ new Vue({
 
 new Vue({
   el: '#app-one',
-  data: { },
-  methods: { },
-  components: {
-    login
+  data: {
+    username: 'Fcant'
   },
-  template: '<login/>'
+  methods: {
+  },
+  render: function (createElements) {
+    return createElements(login)
+  }
 })
