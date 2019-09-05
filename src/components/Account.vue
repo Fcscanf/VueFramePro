@@ -11,7 +11,10 @@ export default {
       Toast({
         message: '提示信息',
         duration: 0,
-        position: 'top'
+        position: 'top',
+        iconClass: 'glyphicon glyphicon-search',
+        // 为图标引用自定义样式
+        className: 'appToast'
       })
     }
   }

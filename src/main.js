@@ -7,6 +7,12 @@ import router from './router'
 import login from './components/Login'
 import appRouter from './components/AppRouter'
 
+// 导入Bootstrap
+import 'bootstrap/dist/css/bootstrap.css'
+
+// 导入自定义CSS样式
+import './css/app.css'
+
 // 导入MintUI的所有组件
 // 导入Mint-UI
 import MintUI from 'mint-ui'
