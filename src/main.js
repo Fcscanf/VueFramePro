@@ -3,7 +3,15 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-import login from './components/login'
+import login from './components/Login'
+import appRouter from './components/AppRouter'
+//  引入VueRouter
+import VueRouter from 'vue-router'
+import account from './components/Account'
+import goodList from './components/GoodsList'
+
+//  安装VueRouter
+Vue.use(VueRouter)
 
 Vue.config.productionTip = false
 
@@ -13,6 +21,25 @@ new Vue({
   router,
   components: { App },
   template: '<App/>'
+})
+
+var routerApp = new VueRouter({
+  routes: [
+    {path: '/account', component: account},
+    {path: '/goodlist', component: goodList}
+  ]
+})
+
+new Vue({
+  el: '#app-router',
+  data: {
+  },
+  methods: {
+  },
+  components: {
+  },
+  render: c => c(appRouter),
+  router: routerApp
 })
 
 new Vue({
