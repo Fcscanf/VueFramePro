@@ -22,7 +22,5 @@ new Vue({
   },
   methods: {
   },
-  render: function (createElements) {
-    return createElements(login)
-  }
+  render: c => c(login)
 })
