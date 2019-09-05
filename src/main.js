@@ -4,6 +4,7 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import login from './components/Login'
+import reg from './components/Reg'
 import appRouter from './components/AppRouter'
 //  引入VueRouter
 import VueRouter from 'vue-router'
@@ -25,7 +26,14 @@ new Vue({
 
 let routerApp = new VueRouter({
   routes: [
-    {path: '/account', component: account},
+    {
+      path: '/account',
+      component: account,
+      children: [
+        {path: 'login', component: login},
+        {path: 'reg', component: reg}
+      ]
+    },
     {path: '/goodlist', component: goodList}
   ]
 })
