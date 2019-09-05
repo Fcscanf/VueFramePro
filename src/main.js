@@ -23,7 +23,7 @@ new Vue({
   template: '<App/>'
 })
 
-var routerApp = new VueRouter({
+let routerApp = new VueRouter({
   routes: [
     {path: '/account', component: account},
     {path: '/goodlist', component: goodList}
@@ -37,8 +37,10 @@ new Vue({
   methods: {
   },
   components: {
+    appRouter
   },
-  render: c => c(appRouter),
+  template: '<appRouter/>',
+  // render: c => c(appRouter),
   router: routerApp
 })
 
