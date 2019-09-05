@@ -4,13 +4,24 @@ import { Toast } from 'mint-ui'
 export default {
   name: 'Account',
   data () {
-    return {}
+    return {
+      toastInstanse: null
+    }
+  },
+  created () {
+    this.getList()
   },
   methods: {
+    getList () {
+      this.show()
+      setTimeout(() => {
+        this.toastInstanse.close()
+      }, 3000)
+    },
     show () {
-      Toast({
+      this.toastInstanse = Toast({
         message: '提示信息',
-        duration: 0,
+        duration: -1,
         position: 'top',
         iconClass: 'glyphicon glyphicon-search',
         // 为图标引用自定义样式
