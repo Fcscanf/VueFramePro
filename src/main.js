@@ -7,6 +7,14 @@ import router from './router'
 import login from './components/Login'
 import appRouter from './components/AppRouter'
 
+// 导入MintUI的所有组件
+// 导入Mint-UI
+import MintUI from 'mint-ui'
+// 此处引入时可以省去 node_moudles 这一层目录
+import 'mint-ui/lib/style.css'
+// 将MintUI注册到Vue
+Vue.use(MintUI)
+
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
