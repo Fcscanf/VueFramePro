@@ -21,3 +21,6 @@ getFileByPathPro('./file/1.txt')
   .then(function (data) {
     console.log(data)
   })
+  .catch(function (err) {
+    console.log(err.message)
+  })
