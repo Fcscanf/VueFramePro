@@ -1,22 +1,23 @@
 const fs = require('fs')
-const path = require('path')
-// 普通读取文件的方式
-// fs.readFile(path.join(__dirname, './file/1.txt'), 'utf-8', (err, dataStr) => {
-//   if (err) throw err
-//   console.log(dataStr)
-// })
 
-function getFileByPath (fpath, callback) {
-  fs.readFile(fpath, 'utf-8', (err, dataStr) => {
-    if (err) return callback(err)
-    // console.log(dataStr)
-    // return dataStr
-    callback(null, dataStr)
+function getFileByPathPro (fpath) {
+  return new Promise(function (resolve, reject) {
+    fs.readFile(fpath, 'utf-8', (err, dataStr) => {
+      if (err) return reject(err)
+      resolve(dataStr)
+    })
   })
 }
 
-getFileByPath(path.join(__dirname, './file/1.txt'), (err, dataStr) => {
-  // console.log(dataStr)
-  if (err) return console.log(err.message)
-  console.log(dataStr)
-})
+getFileByPathPro('./file/1.txt')
+  .then(function (data) {
+    console.log(data)
+    return getFileByPathPro('./file/2.txt')
+  })
+  .then(function (data) {
+    console.log(data)
+    return getFileByPathPro('./file/3.txt')
+  })
+  .then(function (data) {
+    console.log(data)
+  })
